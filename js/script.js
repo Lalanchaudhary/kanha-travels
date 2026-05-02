@@ -46,6 +46,26 @@ function selectPackage(packageName) {
     openWhatsApp(message);
 }
 
+function openKanhaPopup() {
+    const popup = document.getElementById('kanha-popup');
+    if (!popup) {
+        return;
+    }
+
+    popup.classList.add('is-open');
+    document.body.classList.add('popup-open');
+}
+
+function closeKanhaPopup() {
+    const popup = document.getElementById('kanha-popup');
+    if (!popup) {
+        return;
+    }
+
+    popup.classList.remove('is-open');
+    document.body.classList.remove('popup-open');
+}
+
 // Contact form handling
 function handleContactForm(event) {
     event.preventDefault();
@@ -70,6 +90,19 @@ function handleContactForm(event) {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('kanha-popup');
+    if (popup) {
+        openKanhaPopup();
+
+        popup.querySelector('.kanha-popup-close').addEventListener('click', closeKanhaPopup);
+
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup || e.target.classList.contains('kanha-popup-scroll')) {
+                closeKanhaPopup();
+            }
+        });
+    }
+
     // Add event listeners for contact form if it exists
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
@@ -100,4 +133,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeKanhaPopup();
+        }
+    });
 });
