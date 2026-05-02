@@ -3,32 +3,32 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18132525494"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18132525494"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'AW-18132525494');
-</script>
-<!-- Event snippet for Outbound click (1) conversion page
+        gtag('config', 'AW-18132525494');
+    </script>
+    <!-- Event snippet for Outbound click (1) conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18132525494/La-6CK75jKYcELbDocZD',
-      'value': 1.0,
-      'currency': 'INR',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-18132525494/La-6CK75jKYcELbDocZD',
+                'value': 1.0,
+                'currency': 'INR',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanha Travels - Your Dream Vacation Awaits</title>
@@ -60,7 +60,10 @@ function gtag_report_conversion(url) {
             <p>Explore breathtaking destinations with personalized travel experiences tailored just for you.</p>
             <div>
                 <a href="packages.html" class="btn btn-primary">Explore Packages</a>
-                <a href="#contact" class="btn" onclick="return gtag_report_conversion('https://wa.me/919135165706')">Book Now</a>
+                <a href="https://wa.me/919135165706" target="_blank" class="btn thin"
+                    onclick="gtag_report_conversion('https://wa.me/919135165706');">
+                    Book Now
+                </a>
             </div>
         </div>
     </section>
@@ -159,7 +162,7 @@ function gtag_report_conversion(url) {
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="#" class="whatsapp-btn" onclick="openWhatsApp()">
+    <a href="#" class="whatsapp-btn thin" onclick="openWhatsApp()">
         <i class="fab fa-whatsapp"></i>
     </a>
 
