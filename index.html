@@ -11,6 +11,25 @@
 
   gtag('config', 'AW-18132525494');
 </script>
+<!-- Event snippet for Outbound click conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18132525494/HrEwCO_Fo6YcELbDocZD',
+      'value': 1.0,
+      'currency': 'INR',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanha Travels - Your Dream Vacation Awaits</title>
@@ -42,7 +61,7 @@
             <p>Explore breathtaking destinations with personalized travel experiences tailored just for you.</p>
             <div>
                 <a href="packages.html" class="btn btn-primary">Explore Packages</a>
-                <a href="#contact" class="btn">Book Now</a>
+                <a href="#contact" class="btn" onclick="return gtag_report_conversion('https://wa.me/919135165706')"></a>>Book Now</a>
             </div>
         </div>
     </section>
