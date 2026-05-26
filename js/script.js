@@ -35,7 +35,7 @@ function closeLightbox() {
 
 // WhatsApp functions
 function openWhatsApp(message = 'Hello Kanha Travels') {
-    const phoneNumber = '919135165706';
+    const phoneNumber = '917909042424';
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
